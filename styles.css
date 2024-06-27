@@ -1,0 +1,43 @@
+
+/* Import Manrope font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Apply Manrope font to all elements */
+body {
+    font-family: "Montserrat", sans-serif;
+}
+/* Style for the heading */
+h1 {
+    /* font-size: 1.5em; */
+    color: #333;
+    text-align: center; /* Center align the heading */
+    margin: 40px 0; /* Add margin to the top and bottom */
+    /* font-weight: 600; */
+}
+
+/* Style for the table */
+table {
+    width: calc(100% - 40px); /* Adjust table width to include left and right margins */
+    border-collapse: collapse;
+    margin: 0 auto 20px; /* Add margin below the table */
+    border: 1px solid #ddd; /* Add border to the table */
+}
+
+/* Style for table headings */
+th {
+    background-color: #f2f2f2;
+    text-align: center; /* Center align the column headings */
+    padding: 8px;
+}
+
+/* Style for table data */
+td {
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Center align the data in the columns */
+    padding: 8px;
+}
+
+/* Style for alternating rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

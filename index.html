@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Stops and Distance Calculator</title>
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #4CAF50;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e2e2e2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Bus Route Optimiser</h2>
+    <!-- <a href="Busstops.html" class="button">Check Bus Stops</a> -->
+
+    <form id="distanceForm">
+        <label for="start">Enter starting point:</label>
+        <input type="text" id="start" name="start" list="options"><br><br>
+
+<!-- writing options -->
+        <datalist id="options">
+            <option value="ABC"></option>
+<option value="Adabari"></option>
+<option value="Adabari_Tiniali"></option>
+<option value="AIDC"></option>
+<option value="Airport"></option>
+<option value="Anuradha"></option>
+<option value="Apsara"></option>
+<option value="Bamunimaida"></option>
+<option value="Basistha_Chariali"></option>
+<option value="Beharbari"></option>
+<option value="Beltola_Bazar"></option>
+<option value="Bhangagarh"></option>
+<option value="Bharalumukh"></option>
+<option value="Bhootnath"></option>
+<option value="Bora_Service"></option>
+<option value="Boragaon"></option>
+<option value="Chandmari"></option>
+<option value="Chariali"></option>
+<option value="Christianbasti"></option>
+<option value="Church_Field"></option>
+<option value="Dakhingaon"></option>
+<option value="Dhupguri"></option>
+<option value="Dispur"></option>
+<option value="Down_Town"></option>
+<option value="Fancybazar"></option>
+<option value="Farm_Gate"></option>
+<option value="Forest_gate"></option>
+<option value="Ganesh_Mandir"></option>
+<option value="Ganesh_Nagar"></option>
+<option value="Ganeshguri"></option>
+<option value="Gauhati_High_Court"></option>
+<option value="Gauhati_University"></option>
+<option value="Gorchuk"></option>
+<option value="Guwahati_Club"></option>
+<option value="Jagiroad"></option>
+<option value="Jalukbari"></option>
+<option value="Jatia"></option>
+<option value="Jonali"></option>
+<option value="Jorabat"></option>
+<option value="Kachari"></option>
+<option value="Kamakhayagate"></option>
+<option value="Kamakhya_Mandir"></option>
+<option value="Khanapara"></option>
+<option value="Khetri"></option>
+<option value="Lachit_Nagar"></option>
+<option value="Lachitnagar"></option>
+<option value="Lakhtokia"></option>
+<option value="Lalganesh"></option>
+<option value="Lalmati"></option>
+<option value="Last_Gate"></option>
+<option value="Lokhra"></option>
+<option value="Machkhowa"></option>
+<option value="Maligaon"></option>
+<option value="Maligaon_Chariali"></option>
+<option value="Maligaon_Gate_3"></option>
+<option value="Marketing"></option>
+<option value="Nalapara"></option>
+<option value="Narengi"></option>
+<option value="Noonmati"></option>
+<option value="Paltanbazar"></option>
+<option value="Panbazar"></option>
+<option value="Pandu"></option>
+<option value="Post_Office"></option>
+<option value="Powerhouse"></option>
+<option value="Reserve_Bank"></option>
+<option value="Rukminigaon"></option>
+<option value="Santipur"></option>
+<option value="Sarusajai"></option>
+<option value="Sector_3"></option>
+<option value="Silpukhuri"></option>
+<option value="Six_Mile"></option>
+<option value="Super_Market"></option>
+<option value="Survey"></option>
+<option value="Tepesia"></option>
+<option value="Tetelia"></option>
+<option value="Topatoli"></option>
+<option value="Ulubari"></option>
+<option value="Vishal_AT_Road"></option>
+<option value="Walford"></option>
+<option value="Zoo"></option>
+
+        </datalist>
+
+
+
+
+
+
+
+
+        <label for="end">Enter destination:</label>
+        <input type="text" id="end" name="end" list="options"><br><br>
+        <button type="submit">Calculate Distance</button>
+    </form>
+    <div id="result"></div>
+    <table id="busStopsTable">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Distance</th>
+            </tr>
+        </thead>
+        <tbody id="busStopsBody">
+            <!-- Bus stops entries will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script src="graphs.js"></script>
+</body>
+</html>
